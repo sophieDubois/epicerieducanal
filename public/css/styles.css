@@ -1,0 +1,24 @@
+/*Police d'écriture*/
+@import url('@import url https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+
+/*body*/
+body{
+    font-family: 'Prata', serif;
+    }
+
+/*menu principal*/
+.main-navbar-color{
+    background: #A6C1A5;
+}
+.main-navbar-logo{
+    width: 55px;
+    margin-right: 20px;
+}
+
+/*page d'accueil*/
+.picture-vegetables{
+    height: 700px;
+    background-image: url("../images/picture-vegetables.jpg");
+    background-size: cover;
+}
