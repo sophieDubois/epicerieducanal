@@ -1,10 +1,10 @@
 /*Police d'écriture*/
-@import url('@import url https://fonts.googleapis.com/css2?family=Prata&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 /*body*/
 body{
-    font-family: 'Prata', serif;
+    font-family: 'Prata', sans-serif;
     }
 
 /*menu principal*/
@@ -16,9 +16,44 @@ body{
     margin-right: 20px;
 }
 
-/*page d'accueil*/
-.picture-vegetables{
-    height: 700px;
-    background-image: url("../images/picture-vegetables.jpg");
+/*bannière et titre de la  page d'accueil*/
+.banner {
+    height: 500px;
+    background-image: url("../images/picture-vegetables .png");
     background-size: cover;
+    filter:  contrast(65%);
+    }
+
+h2{
+    font-weight: bold;
+    font-size: 6rem;
+    text-shadow: 3px 3px 7px rgba(255, 255, 255, 1);
 }
+h1{
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 3px 3px 7px rgba(255, 255, 255, 1);
+}
+.subtitle{
+    font-family: 'Satisfy', cursive;
+}
+
+
+
+
+
+
+/*@media (max-width: 480px) {*/
+/*    .banner h1 {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+
+
+
+    /*!*Styles spécifiques pour les écrans de taille moyenne type tablette*!*/
+    /*@media screen and (min-width: 780px) and (max-width: 979px){*/
+
+    /*    !*Styles spécifiques pour les grands écrans type écrans d'ordinateur*!*/
+    /*    @media screen and (min-width: 980px){*/
+    /*}*/

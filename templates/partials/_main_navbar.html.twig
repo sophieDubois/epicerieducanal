@@ -1,50 +1,13 @@
-{#<nav class="navbar main-navbar-color navbar-light navbar-expand-lg bg-body-tertiary">#}
-{#    <div class="container-fluid ">#}
 
-{#        <a class="navbar-brand" href="#">Epicerie Du Canal</a>#}
-
-{#        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">#}
-{#            <span class="navbar-toggler-icon"></span>#}
-{#        </button>#}
-
-{#        <div class="collapse navbar-collapse" id="navbarSupportedContent">#}
-{#            <ul class="navbar-nav me-auto mb-2 mb-lg-0">#}
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link active" aria-current="page" href="#">Accueil</a>#}
-{#                </li>#}
-
-{#                <li class="nav-item dropdown">#}
-{#                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">#}
-{#                        Nos produits#}
-{#                    </a>#}
-{#                    <ul class="dropdown-menu">#}
-{#                        <li><a class="dropdown-item" href="#">Fromages et charcuteries à la coupe</a></li>#}
-{#                        <li><a class="dropdown-item" href="#">En ce moment dans votre épicerie</a></li>#}
-{#                        <li><hr class="dropdown-divider"></li>#}
-{#                        <li><a class="dropdown-item" href="#">Artisants locaux</a></li>#}
-{#                    </ul>#}
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link active" href="#">Activités et loisirs</a>#}
-{#                </li>#}
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link active">Contact</a>#}
-{#                </li>#}
-{#            </ul>#}
-{#            <form class="d-flex" role="search">#}
-{#                <input class="form-control me-2" type="search" placeholder="" aria-label="Search">#}
-{#                <button class="btn btn-outline-success" type="submit">chercher</button>#}
-{#            </form>#}
-{#        </div>#}
-{#    </div>#}
-{#</nav>#}
 
 <nav class="navbar main-navbar-color navbar-expand-lg bg-#A6C1A5  main-navbar">
     <div class="container-fluid">
 
         {# Logo et titre du site #}
-        <a class="navbar-brand" href="{{ path('main_home') }}">
+        <a class="navbar-brand fs-3" href="{{ path('main_home') }}">
             <img class="img-fluid main-navbar-logo" src="{{ asset('images/basket.png') }}" alt="">Epicerie Du Canal
         </a>
+
 
         {# Bouton burger #}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Afficher la navigation">
@@ -54,17 +17,56 @@
         {# Conteneur principal des boutons #}
         <div class="collapse navbar-collapse" id="mainNavbarContent">
 
-            {# Paquet des boutons de gauche #}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {# logo de gauche #}
+            <ul class="navbar-nav me-auto my-2 mb-2 mb-lg-0 col-md-3 ">
+            </ul>
 
-                {# Lien de la page d'accueil #}
-                <li class="nav-item">
+
+            {# boutons de droite #}
+            <ul class="nav navbar-nav nav-fill mb-2 mb-lg-0 col-md-6">
+
+                {# Lien de la page Accueil #}
+                <li class="nav-item fs-5">
                     <a href="{{ path('main_home') }}" class="nav-link{{ route == 'main_home' ? ' active' }}">
                         <i class="fa-solid fa-shop mx-1"></i>
                         Accueil
                     </a>
                 </li>
+
+                {# Lien de la page Nos produits #}
+                <li class="nav-item fs-5">
+                    <a href="{{ path('main_product') }}" class="nav-link{{ route == 'main_product' ? ' active' }}">
+                        <i class="fa-solid fa-plate-wheat mx-1"></i>
+                        Nos produits
+                    </a>
+                </li>
+
+                {# Lien de la page tourisme #}
+                <li class="nav-item fs-5">
+                    <a href="" class="nav-link">
+                        <i class="fa-solid fa-shoe-prints mx-1"></i>
+                        Tourisme
+                    </a>
+                </li>
+
+                {# Lien de la page Contact #}
+                <li class="nav-item fs-5">
+                    <a href="" class="nav-link">
+                        <i class="fa-regular fa-address-card mx-1"></i>
+                        Contact
+                    </a>
+                </li>
+
+
+
+
             </ul>
+
+
+
+
+
+
         </div>
     </div>
 </nav>

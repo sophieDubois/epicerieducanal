@@ -16,5 +16,27 @@ class MainController extends AbstractController
     {
         return $this->render('main/home.html.twig');
     }
+
+
+    /*Controleur de la page nos produits*/
+    #[Route('/nos-produits', name: 'main_product')]
+    public function product(): Response
+    {
+        return $this->render('main/product.html.twig');
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
 

@@ -7,14 +7,66 @@
 {# Remplissage du body de la page #}
 {% block body %}
 
-    {# Grille Bootstrap #}
-    <div class="container-fluid">
+{# Grille Bootstrap #}
+<div class="container-fluid">
 
     {# Titre h1 de la page #}
+    <!--Bannière avec titres-->
+    <div class="row banner d-flex align-items-center">
+
+        <div class="subtitle col-5 text-black text-center col-sm col-md col-xl-6">
+            <h1>Emoustillez vos papilles</h1>
+        </div>
+
+        <div class="col-9 text-black text-center col-sm-9 col-md col-xl-12">
+            <h2>Epicerie Du Canal</h2>
+        </div>
+
+        <div class="col text-black text-center col-sm col-xl-12">
+            <h1>Produits frais et de qualités</h1>
+        </div>
+
+    </div>
+    {#section logo de présentations #}
+    <section>
+    <div class="row">
 
 
-  {# affichage de l'image  #}
-    <div class="row picture-vegetables"></div>
+        <div class="d-flex justify-content-center flex-wrap">
+
+            <div class="m-3 p-3">
+                <img class="img-thumbnail" src="{{ asset('images/smile.png') }}" alt="smiley">
+                <h6 class="text-center mt-2 mb-0 fs-6">Epicier souriant!</h6>
+            </div>
+            <div class="m-3 p-3">
+                <img class="img-thumbnail" src="{{ asset('images/tent.png') }}" alt="tente">
+                <h6 class="text-center mt-2 mb-0 fs-6">Repos bien mérité</h6>
+            </div>
+            <div class="m-3 p-3">
+                <img class="img-thumbnail" src="{{ asset('images/bike-parking.png') }}" alt="parking à vélo">
+                <h6 class="text-center mt-2 mb-0 fs-6">Parking à vélo</h6>
+            </div>
+            <div class="m-3 p-3">
+                <img class="img-thumbnail" src="{{ asset('images/eat.png') }}" alt="se restaurer">
+                <h6 class="text-center mt-2 mb-0 fs-6">Se restaurer</h6>
+            </div>
+            <div class="m-3 p-3">
+                <img class="img-thumbnail" src="{{ asset('images/fresh-products.png') }}" alt="produits frais">
+                <h6 class="text-center mt-2 mb-0 fs-6">Produits frais et à la coupes</h6>
+            </div>
+            <div class="m-3 p-3">
+                <img class="img-thumbnail" src="{{ asset('images/fishing-license.png') }}" alt="pêche">
+                <h6 class="text-center mt-2 mb-0 fs-6">Permis de pêche</h6>
+            </div>
+
+        </div>
+
+    </div>
+    </section>
+
+</div>
+
+
 
 
 {% endblock %}
