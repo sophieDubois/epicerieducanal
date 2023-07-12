@@ -1,11 +1,11 @@
 
 
-<nav class="navbar main-navbar-color navbar-expand-lg bg-#A6C1A5  main-navbar">
+<nav class="navbar main-navbar-color navbar-expand-lg bg-#A6C1A5 main-navbar">
     <div class="container-fluid">
 
         {# Logo et titre du site #}
         <a class="navbar-brand fs-3" href="{{ path('main_home') }}">
-            <img class="img-fluid main-navbar-logo" src="{{ asset('images/basket.png') }}" alt="">Epicerie Du Canal
+            <img class="img-fluid main-navbar-logo" src="{{ asset('images/home-icons/basket.png') }}" alt="">Epicerie Du Canal
         </a>
 
 
@@ -23,10 +23,9 @@
 
 
             {# boutons de droite #}
-            <ul class="nav navbar-nav nav-fill mb-2 mb-lg-0 col-md-6">
-
+            <ul class="navbar-nav me-auto nav-fill mb-2 mb-lg-0 col-md-6 fs-5">
                 {# Lien de la page Accueil #}
-                <li class="nav-item fs-5">
+                <li class="nav-item">
                     <a href="{{ path('main_home') }}" class="nav-link{{ route == 'main_home' ? ' active' }}">
                         <i class="fa-solid fa-shop mx-1"></i>
                         Accueil
@@ -34,7 +33,7 @@
                 </li>
 
                 {# Lien de la page Nos produits #}
-                <li class="nav-item fs-5">
+                <li class="nav-item">
                     <a href="{{ path('main_product') }}" class="nav-link{{ route == 'main_product' ? ' active' }}">
                         <i class="fa-solid fa-plate-wheat mx-1"></i>
                         Nos produits
@@ -42,24 +41,20 @@
                 </li>
 
                 {# Lien de la page tourisme #}
-                <li class="nav-item fs-5">
-                    <a href="" class="nav-link">
+                <li class="nav-item">
+                    <a href="{{ path('main_tourism') }}" class="nav-link{{ route == 'main_tourism' ? ' active' }}">
                         <i class="fa-solid fa-shoe-prints mx-1"></i>
                         Tourisme
                     </a>
                 </li>
 
                 {# Lien de la page Contact #}
-                <li class="nav-item fs-5">
-                    <a href="" class="nav-link">
+                <li class="nav-item">
+                    <a href="{{ path('main_contact') }}" class="nav-link{{ route == 'main_contact' ? 'active' }}">
                         <i class="fa-regular fa-address-card mx-1"></i>
                         Contact
                     </a>
                 </li>
-
-
-
-
             </ul>
 
 

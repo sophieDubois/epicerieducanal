@@ -1,0 +1,25 @@
+{# Utilisation du squelette "base.html.twig" #}
+{% extends "base.html.twig" %}
+
+{# Définition du titre de la page #}
+{% block title%}Tourisme{% endblock %}
+
+{# Remplissage du body de la page #}
+{% block body %}
+
+
+    {# cards de titre et présentation #}
+    <div class="card col-12 col-lg-7 mx-auto my-5 p-3 ">
+        <div class="card-header text-center ">
+            <h1 class=""><i class="fa-solid fa-shoe-prints mx-1"></i>Tourisme</h1>
+        </div>
+        <div class="card-body">
+            <p class=" p-2 m-2 fs-5 text-center">Depuis 2014, votre épicier s'efforce de réunir des produits frais et de qualités.
+                Nous vous accueillons, avec plaisir, pour vous proposer des articles classiques de première nécessité; ainsi qu'une sélection de producteurs locaux.
+                Charcuterie et fromages à la coupe.</p>
+            <p class=" p-2 m-2 fs-5 text-center">Pour vos réunions entre amis ou en familles: des plateaux composés sont à proposer.
+                À base de légumes, fromages et charcuteries de terroir.</p>
+            <p class=" p-2 m-2 fs-6 text-center">Nous sommes en mesure de livrer jusqu'à cinq articles.</p>
+        </div>
+    </div>
+{% endblock %}

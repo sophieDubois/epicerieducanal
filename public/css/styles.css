@@ -5,11 +5,12 @@
 /*body*/
 body{
     font-family: 'Prata', sans-serif;
+    /*background:#A6C1A5 ;*/
     }
 
 /*menu principal*/
 .main-navbar-color{
-    background: #A6C1A5;
+    background:#A6C1A5 ;
 }
 .main-navbar-logo{
     width: 55px;
@@ -21,7 +22,7 @@ body{
     height: 500px;
     background-image: url("../images/picture-vegetables .png");
     background-size: cover;
-    filter:  contrast(65%);
+    filter: contrast(65%);
     }
 
 h2{
@@ -39,9 +40,21 @@ h1{
 }
 
 
+/*Page 'Nos produits'*/
+
+/*titres des cards produits locaux*/
+.card-title{
+    color: #0e8c0a;
+}
 
 
 
+/*!* Mediaqueries *!*/
+/*@media (min-width: 576px) {*/
+/*    .banner {*/
+/*        height: 500px;*/
+/*    }*/
+/*}*/
 
 /*@media (max-width: 480px) {*/
 /*    .banner h1 {*/
