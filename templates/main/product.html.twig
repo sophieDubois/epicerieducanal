@@ -6,73 +6,28 @@
 
 {# Remplissage du body de la page #}
 {% block body %}
+
     {# Grille Bootstrap #}
     <div class="container-fluid">
 
 
-{# Carousel: présentation générale de l'épicerie, avec textes#}
-{#        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">#}
-{#            <div class="carousel-indicators">#}
-{#                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>#}
-{#                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>#}
-{#                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>#}
-{#            </div>#}
-
-{#            <div class="carousel-inner">#}
-{#                #}{# slide 1 #}
-{#                <div class="carousel-item active">#}
-{#                    <img src="..." class="d-block w-100" alt="...">#}
-{#                    <div class="carousel-caption d-none d-md-block">#}
-{#                        <h5>First slide label</h5>#}
-{#                        <p>Some representative placeholder content for the first slide.</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                #}{# slide 2 #}
-{#                <div class="carousel-item">#}
-{#                    <img src="..." class="d-block w-100" alt="...">#}
-{#                    <div class="carousel-caption d-none d-md-block">#}
-{#                        <h5>Second slide label</h5>#}
-{#                        <p>Some representative placeholder content for the second slide.</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                #}{# slide 3 #}
-{#                <div class="carousel-item">#}
-{#                    <img src="..." class="d-block w-100" alt="...">#}
-{#                    <div class="carousel-caption d-none d-md-block">#}
-{#                        <h5>Third slide label</h5>#}
-{#                        <p>Some representative placeholder content for the third slide.</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-
-{#            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">#}
-{#                <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
-{#                <span class="visually-hidden">Previous</span>#}
-{#            </button>#}
-{#            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">#}
-{#                <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
-{#                <span class="visually-hidden">Next</span>#}
-{#            </button>#}
-{#        </div>#}
-
-        {# titre principal #}
-{#    <div id="configs" class="my-5">#}
-
-{#        <h2 class="mb-3 text-uppercase"><i class="fa-solid fa-wrench me-3"></i>Les configs du moment</h2>#}
-
-
-{# cards de titre et présentation #}
-        <div class="card col-12 col-lg-7 mx-auto my-5 p-3 ">
+{# cards de titre et lien page d'accueil: logo+accroche #}
+        <div class="card col-md-10 mx-auto my-5 p-3 ">
             <div class="card-header text-center ">
-                <h1 class=""><i class="fa-solid fa-plate-wheat me-3"></i>Nos produits</h1>
+                <h1 class="fs-4"><i class="fa-solid fa-plate-wheat me-3"></i>Nos produits</h1>
             </div>
             <div class="card-body">
-                <p class=" p-2 m-2 fs-5 text-center">Depuis 2014, votre épicier s'efforce de réunir des produits frais et de qualités.
-                        Nous vous accueillons, avec plaisir, pour vous proposer des articles classiques de première nécessité; ainsi qu'une sélection de producteurs locaux.
-                Charcuterie et fromages à la coupe.</p>
-                <p class=" p-2 m-2 fs-5 text-center">Pour vos réunions entre amis ou en familles: des plateaux composés sont à proposer.
-                    À base de légumes, fromages et charcuteries de terroir.</p>
-                <p class=" p-2 m-2 fs-6 text-center">Nous sommes en mesure de livrer jusqu'à cinq articles.</p>
+                <div class="row">
+                    <div class="d-flex justify-content-center flex-wrap">
+
+                <img class="img-thumbnail" id="eat" src="{{ asset('images/home-icons/eat.png') }}" alt="se restaurer">
+                <p class="align-self-center m-4">Nous vous proposons un emplacement: pour vous restaurer en toute décontraction.<br>Des articles classiques de première nécessité; ainsi qu'une sélection de producteurs locaux.</p>
+
+
+                <img class="img-thumbnail" id="fresh" src="{{ asset('images/home-icons/fresh-products.png') }}" alt="lien vers produits frais">
+                <p class="align-self-center m-4">Des produits gages de qualité.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -117,7 +72,7 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Confiture de Mamie Soize</h5>
-                            <p class="card-text">La saison des confitures va battre son plein, courte, mais tellement riche de plaisir et d'audace. 15 juin–15 septembre.La délicatesse des saveurs mêlées, le luxe et le raffinement des couleurs, l'originalité des consistances.</p>
+                            <p class="card-text">A Montceau-Les-Mines, la saison des confitures va battre son plein, courte, mais tellement riche de plaisir et d'audace.La délicatesse des saveurs mêlées, le luxe et le raffinement des couleurs, l'originalité des consistances.</p>
                         </div>
                     </div>
                 </div>
@@ -131,7 +86,7 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Fruits & légumes</h5>
-                            <p class="card-text"> Vincent Geny: maraicher, producteur de légumes en vente directe, cueillette libre au potager.</p>
+                            <p class="card-text"> Vincent Geny réside a Marmagnes: maraicher, producteur de légumes en vente directe, cueillette libre au potager.</p>
                         </div>
                     </div>
                 </div>
@@ -165,17 +120,8 @@
                 </div>
             </div>
 
-
-
         </div>
 
 
-
-
-
     </div>
-
-
-
-
 {% endblock %}

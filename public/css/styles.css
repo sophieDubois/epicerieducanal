@@ -41,14 +41,15 @@ h1{
 
 
 /*Page 'Nos produits'*/
-
 /*titres des cards produits locaux*/
 .card-title{
     color: #0e8c0a;
 }
 
-
-
+/*footer*/
+.card-footer{
+    background: #0e8c0a;
+}
 /*!* Mediaqueries *!*/
 /*@media (min-width: 576px) {*/
 /*    .banner {*/

@@ -7,29 +7,30 @@
 {# Remplissage du body de la page #}
 {% block body %}
 
+    {# Grille Bootstrap #}
+    <div class="container-fluid">
 
-    {# cards de titre et présentation #}
-    <div class="card col-12 col-lg-7 mx-auto my-5 p-3 ">
-        <div class="card-header text-center ">
-            <h1 class=""><i class="fa-solid fa-shoe-prints mx-1"></i>Tourisme</h1>
+        {# cards de titre et lien page d'accueil: logo+accroche#}
+        <div class="card col-md-10 mx-auto my-5 p-3 ">
+            <div class="card-header text-center ">
+                <h1 class="fs-4"><i class="fa-solid fa-shoe-prints mx-1"></i>Tourisme</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <img class="img-thumbnail" id="shoe" src="{{ asset('images/home-icons/tent.png') }}" alt="tente">
+                        <p class="align-self-center m-4">Venez profiter d'un repos bien mérité dans un terrain privé de 100m²; avec sanitaires.</p>
+
+                        <img class="img-thumbnail" id="bike" src="{{ asset('images/home-icons/bike-parking.png') }}" alt="lien vers parking à vélo">
+                        <p class="align-self-center m-4">Garages a vélos sécurisés</p>
+
+                        <img class="img-thumbnail" id="fish" src="{{ asset('images/home-icons/fishing-license.png') }}" alt="pêche">
+                        <p class="align-self-center m-4">Achetez votre permis de pêche et quelques appâts</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="card-body">
-            <p class=" p-2 m-2 fs-5 text-center">Depuis 2014, votre épicier s'efforce de réunir des produits frais et de qualités.
-                Nous vous accueillons, avec plaisir, pour vous proposer des articles classiques de première nécessité; ainsi qu'une sélection de producteurs locaux.
-                Charcuterie et fromages à la coupe.</p>
-            <p class=" p-2 m-2 fs-5 text-center">Pour vos réunions entre amis ou en familles: des plateaux composés sont à proposer.
-                À base de légumes, fromages et charcuteries de terroir.</p>
-            <p class=" p-2 m-2 fs-6 text-center">Nous sommes en mesure de livrer jusqu'à cinq articles.</p>
-        </div>
-    </div>
-
-
-    <div class="m-3 p-3">
-
-        <img class="img-thumbnail" src="{{ asset('images/home-icons/eat.png') }}" alt="se restaurer">
-
-        <h6 class="text-center mt-2 mb-0 fs-6">Se restaurer</h6>
-
     </div>
 
 {% endblock %}

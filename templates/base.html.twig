@@ -25,17 +25,19 @@
     {# Block pour permettre aux pages de rajouter individuellement des fichiers CSS additionnels #}
     {% block css %}{% endblock %}
 
-
-
 </head>
 <body>
     {# inclusion du menu principal du site #}
     {% include 'partials/_main_navbar.html.twig' %}
 
+    {# inclusion de l'affichage des messages flashes de type "success" et "error" #}
+    {% include 'partials/_flashes.html.twig' %}
+
     {# inclusion du contenu des pages (via le block "body") #}
     {% block body %}{% endblock %}
 
-
+    {# inclusion du footer du site #}
+    {% include 'partials/_main_footer.html.twig' %}
 
 
 

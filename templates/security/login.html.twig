@@ -1,0 +1,66 @@
+{# Utilisation du squelette "base.html.twig" #}
+{% extends "base.html.twig" %}
+
+{# Définition du titre de la page #}
+{% block title%}Connexion{% endblock %}
+
+{# Remplissage du body de la page #}
+{% block body %}
+
+    {# Grille Bootstrap #}
+    <div class="container-fluid">
+
+        {# cards de titre et présentation #}
+        <div class="card col-12 col-lg-7 mx-auto my-5 p-3 ">
+            <div class="card-header text-center ">
+                {# changer l'icone du titre #}
+                <h1 class="fs-4"><i class="fa-solid fa-right-to-bracket mx-1"></i>Connexion</h1>
+            </div>
+{#            <div class="card-body">#}
+{#                <p class=" p-2 m-2 fs-5 text-center">xxxxxxxxxxxxxxxxxxxxx</p>#}
+{#                <p class=" p-2 m-2 fs-5 text-center">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>#}
+{#                <p class=" p-2 m-2 fs-6 text-center">xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>#}
+{#            </div>#}
+        </div>
+
+        {# Formulaire de connexion #}
+        <div class="row">
+
+            <div class="col-12 col-md-4 mx-auto">
+
+                <form action="{{ path('app_login') }}" method="POST">
+
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {# Champ email #}
+                    <div class="mb-3">
+                        <label class="form-label" for="inputEmail">Adresse Email</label>
+                        <input value="{{ last_username }}" type="text" name="email" id="inputEmail" class="form-control" required autofocus>
+                    </div>
+
+                    {# Champ mot de passe #}
+                    <div class="mb-3">
+                        <label class="form-label" for="inputPassword">Mot de passe</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" required>
+                    </div>
+
+                    {# Champ invisible token anti attaque CSRF #}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                    {# Bouton de validation #}
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-outline-success w-100" value="Connexion">
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
