@@ -18,9 +18,8 @@
         <div class="collapse navbar-collapse" id="mainNavbarContent">
 
 
-
             {# logo de gauche #}
-            <ul class="navbar-nav me-auto nav-fill my-2 mb-2 mb-lg-0 col-md-5">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 {# Lien de la page Accueil #}
                 <li class="nav-item">
@@ -30,6 +29,34 @@
                     </a>
                 </li>
 
+                {# Menu déroulant #}
+                <li class="nav-item dropdown">
+
+                    {# Texte du bouton du menu déroulant #}
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-newspaper me-1"></i>Blog
+                    </a>
+
+                    {# Liste des boutons du menu déroulant #}
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        {# Bouton de la page qui liste tous les articles #}
+                        <li><a class="dropdown-item" href="">Publications</a></li>
+
+                        {# affichage des boutons reservé aux administrateur #}
+                        {% if is_granted('ROLE_ADMIN') %}
+
+                        {# Séparateur #}
+                        <li><hr class="dropdown-divider"></li>
+
+                        {# Bouton de la page pour créer un nouvel article #}
+                        <li><a class="dropdown-item" href="{{ path('blog_publication_new') }}">Nouvelle Publication</a></li>
+
+                    {% endif %}
+                    </ul>
+
+
+
                 {# Lien de la page Nos produits #}
                 <li class="nav-item">
                     <a href="{{ path('main_product') }}" class="nav-link{{ route == 'main_product' ? ' active' }}">
@@ -37,7 +64,6 @@
                         Nos produits
                     </a>
                 </li>
-
                 {# Lien de la page tourisme #}
                 <li class="nav-item">
                     <a href="{{ path('main_tourism') }}" class="nav-link{{ route == 'main_tourism' ? ' active' }}">
@@ -45,13 +71,13 @@
                         Tourisme
                     </a>
                 </li>
-
                 {# Lien de la page Contact #}
                 <li class="nav-item">
                     <a href="{{ path('main_contact') }}" class="nav-link{{ route == 'main_contact' ? ' active' }}">
                         <i class="fa-regular fa-address-card mx-1"></i>
                         Contact
                     </a>
+
                 </li>
             </ul>
 
@@ -59,7 +85,7 @@
 
 
             {# boutons de droite #}
-            <ul class="navbar-nav ms-auto nav-fill my-2 mb-2 mb-lg-0 col-md-5">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
 
                 {# affichage des liens reservés aux utilisateurs connectés et ceux pour les personnes déconnectés ds le else #}
@@ -70,6 +96,7 @@
 
                     {# Texte du bouton du menu déroulant #}
                     <a class="nav-link dropdown-toggle text-black" href="#" id="profil-dropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                         {# Affichage du pseudonyme de l'utilisateur connecté #}
                         <i class="fas fa-user mx-1"></i>{{ app.user.pseudonym }}
                     </a>
@@ -90,9 +117,6 @@
 
                 </li>
 
-
-
-
                 {% else %}
                 {# lien page d'inscription #}
                 <li class="nav-item">
@@ -107,14 +131,12 @@
                         <i class="fa-solid fa-right-to-bracket mx-1"></i>Connexion
                     </a>
                 </li>
+
                 {% endif %}
-
-
-
             </ul>
 
 
-       </div>
-    </div>
+        </div>
+     </div>
 </nav>
 
