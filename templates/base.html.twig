@@ -19,9 +19,13 @@
     {# inclusion de bootstrap en local #}
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
+    {# inclusion du fichier js de Bootstrap #}
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    {# Block pour permettre aux pages de rajouter individuellement des fichiers JS additionnels #}
+    {% block js %}{% endblock %}
+
     {# inclusion Styles.css personnel #}
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-
     {# Block pour permettre aux pages de rajouter individuellement des fichiers CSS additionnels #}
     {% block css %}{% endblock %}
 
@@ -36,17 +40,19 @@
     {# inclusion du contenu des pages (via le block "body") #}
     {% block body %}{% endblock %}
 
-    {# inclusion du footer du site #}
-    {% include 'partials/_main_footer.html.twig' %}
+    {# inclusion du footer du site sauf dans la page accueil #}
+    {#condition: si la route est differente que Accueil#}
+            {% if app.request.attributes.get('_route') != 'main_home' %}
+
+            {% include 'partials/_main_footer.html.twig' %}
+
+        {% endif %}
 
 
 
 
 
-    {# inclusion du fichier js de Bootstrap #}
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
-    {# Block pour permettre aux pages de rajouter individuellement des fichiers JS additionnels #}
-    {% block js %}{% endblock %}
+
 </body>
 </html>

@@ -25,20 +25,20 @@ body{
     filter: contrast(65%);
     }
 
+h1, h3{
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 3px 3px 7px rgba(255, 255, 255, 1);
+}
 h2{
     font-weight: bold;
     font-size: 6rem;
     text-shadow: 3px 3px 7px rgba(255, 255, 255, 1);
 }
-h1{
-    font-weight: bold;
-    font-size: 2rem;
-    text-shadow: 3px 3px 7px rgba(255, 255, 255, 1);
-}
+
 .subtitle{
     font-family: 'Satisfy', cursive;
 }
-
 
 /*Page 'Nos produits'*/
 /*titres des cards produits locaux*/
@@ -46,28 +46,73 @@ h1{
     color: #0e8c0a;
 }
 
-/*footer*/
-.card-footer{
-    background: #0e8c0a;
+/*page 'Tourisme'*/
+.container img{
+    float: left;
+    width: 200px;
+    margin: 10px 30px;
+
 }
-/*!* Mediaqueries *!*/
-/*@media (min-width: 576px) {*/
-/*    .banner {*/
-/*        height: 500px;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 480px) {*/
-/*    .banner h1 {*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
 
 
+/*page 'Contact'*/
+.schedule{
+    list-style-type: none;
+}
 
-    /*!*Styles spécifiques pour les écrans de taille moyenne type tablette*!*/
-    /*@media screen and (min-width: 780px) and (max-width: 979px){*/
 
-    /*    !*Styles spécifiques pour les grands écrans type écrans d'ordinateur*!*/
-    /*    @media screen and (min-width: 980px){*/
-    /*}*/
+/*!*footer*!*/
+/*icône faccebook*/
+.nav-link{
+    width: 60px;
+}
+
+.site-footer{
+    background-color: #9fb2a3;
+
+}
+
+
+/*MEDIA QUERIES*/
+    /*Pour un format mobile*/
+@media(max-width:767px){
+    h2 {
+        display: none;
+    }
+    h1,h3 {
+        font-size: 3.5rem;
+    }
+}
+
+    /*Pour un format tablette*/
+/*@media(min-width:768px){
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

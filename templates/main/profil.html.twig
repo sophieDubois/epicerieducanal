@@ -2,76 +2,47 @@
 {% extends "base.html.twig" %}
 
 {# Définition du titre de la page #}
-{% block title%}Gestion du profil{% endblock %}
+{% block title%}Mon profil{% endblock %}
 
 {# Remplissage du body de la page #}
 {% block body %}
 
     {# Grille Bootstrap #}
     <div class="container-fluid">
-
         {# cards de titre et présentation #}
         <div class="card col-12 col-lg-7 mx-auto my-5 p-3 ">
             <div class="card-header text-center ">
-                <h1 class=""><i class="fa-regular fa-address-card mx-1"></i>Gestion du profil</h1>
+                <h1 class="fs-4"><i class="fa-regular fa-address-card mx-1"></i>Profil</h1>
             </div>
         </div>
 
+
+        {# card de la personne connectée #}
         <div class="row">
             <div class="col-12 col-md-10 mx-auto">
                 <div class="row">
 
-
-
-
-                    {# Bloc de gauche #}
-                    <div class="col-12 col-md-3 bg-black px-2 py-3 text-center">
-
-                        {# Image de profil #}
-                        <div class="row">
-                            <div class="col-10 mx-auto d-flex justify-content-center align-items-center">
-
-{#                                {% if app.user.photo is null %}#}
-                                    <img class="img-thumbnail" src="{{ asset('images/profil.png') }}" alt="devanture de l'épicerie du canal">
-{#                                {% else %}#}
-{#                                    <img class="img-thumbnail" src="{{ asset('images/profils/' ~ app.user.photo) |imagine_filter('profil') }}" alt="">#}
-{#                                {% endif %}#}
-
+                    <div class="card mb-3 mx-auto" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <img class="img-thumbnail" src="{{ asset('images/profil.png') }}" alt="devanture de l'épicerie du canal">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <ul class="text-xl-start">
+                                        <li class="list-group-item">Adresse Email : <span class="fw-bold fs-5">{{ app.user.email }}</span></li>
+                                        <li class="list-group-item">Pseudonyme : <span class="fw-bold fs-5">{{ app.user.pseudonym }}</span></li>
+                                        <li class="list-group-item">Date d'inscription : <span class="fw-bold fs-5">{{ app.user.registrationDate | date('d/m/y à H\\hi') }}</span></li>
+                                        <li class="list-group-item">Compte : <span class="fw-bold fs-5">{{ is_granted('ROLE_ADMIN') ? 'administrateur' : 'utilisateur'}}</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-
-{#                        #}{# Lien vers la page permettant de changer de photo de profil #}
-{#                        <div class="row">#}
-{#                            <div class="col-12 pt-3 ">#}
-{#                                <a class="text-decoration-none" href="{{ path('main_edit_photo') }}">Modifier la photo de profil</a>#}
-{#                            </div>#}
-{#                        </div>#}
-
-{#                    </div>#}
-
-
-
-
-                    {# Bloc de droite #}
-                    <div class="col-12 col-md-9 px-2 py-3 bg-dark d-flex justify-content-center align-items-center">
-
-                        {# Infos du compte #}
-                        <ul class="list-group col-12 col-md-8 p-0">
-                            <li class="list-group-item bg-black text-white">Adresse Email : <span class="text-info">{{ app.user.email }}</span></li>
-                            <li class="list-group-item bg-black text-white">Pseudonyme : <span class="text-info">{{ app.user.pseudonym }}</span></li>
-                            {# conversion de la date en string #}
-                            <li class="list-group-item bg-black text-white">Date d'inscription : <span class="text-info">{{ app.user.registrationDate | date('d/m/y à H\\hi') }}</span></li>
-                            <li class="list-group-item bg-black text-white">
-                                Compte :
-                                <span class="text-info">{{ is_granted('ROLE_ADMIN') ? 'administrateur' : 'utilisateur'}}</span>
-                            </li>
-                        </ul>
-
                     </div>
-
                 </div>
             </div>
         </div>
+
 
     </div>
 {% endblock %}

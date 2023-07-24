@@ -19,7 +19,6 @@
 
 
 
-
             {# logo de gauche #}
             <ul class="navbar-nav me-auto nav-fill my-2 mb-2 mb-lg-0 col-md-5">
 
@@ -47,6 +46,13 @@
                     </a>
                 </li>
 
+                {# Lien de la page Contact #}
+                <li class="nav-item">
+                    <a href="{{ path('main_contact') }}" class="nav-link{{ route == 'main_contact' ? ' active' }}">
+                        <i class="fa-regular fa-address-card mx-1"></i>
+                        Contact
+                    </a>
+                </li>
             </ul>
 
 
@@ -54,6 +60,7 @@
 
             {# boutons de droite #}
             <ul class="navbar-nav ms-auto nav-fill my-2 mb-2 mb-lg-0 col-md-5">
+
 
                 {# affichage des liens reservés aux utilisateurs connectés et ceux pour les personnes déconnectés ds le else #}
                 {% if app.user %}
@@ -83,6 +90,9 @@
 
                 </li>
 
+
+
+
                 {% else %}
                 {# lien page d'inscription #}
                 <li class="nav-item">
@@ -100,13 +110,7 @@
                 {% endif %}
 
 
-                {# Lien de la page Contact #}
-                <li class="nav-item">
-                    <a href="{{ path('main_contact') }}" class="nav-link{{ route == 'main_contact' ? ' active' }}">
-                        <i class="fa-regular fa-address-card mx-1"></i>
-                        Contact
-                    </a>
-                </li>
+
             </ul>
 
 
