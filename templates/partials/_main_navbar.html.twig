@@ -1,11 +1,11 @@
 
 
-<nav class="navbar main-navbar-color navbar-expand-lg bg-#A6C1A5 main-navbar">
+<nav class="navbar navbar-expand-lg bg-#A6C1A5 ">
     <div class="container-fluid">
 
         {# Logo et titre du site #}
         <a class="navbar-brand fs-3" href="{{ path('main_home') }}">
-            <img class="img-fluid main-navbar-logo" src="{{ asset('images/home-icons/basket.png') }}" alt="">Epicerie Du Canal
+            <img class="img-fluid main-navbar-logo" src="{{ asset('images/home-icons/basket.png') }}" alt="épicerie du canal">Epicerie Du Canal
         </a>
 
 
@@ -19,7 +19,7 @@
 
 
             {# logo de gauche #}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mx-auto nav-fill nav-underline">
 
                 {# Lien de la page Accueil #}
                 <li class="nav-item">
@@ -28,32 +28,6 @@
                         Accueil
                     </a>
                 </li>
-
-                {# Menu déroulant #}
-                <li class="nav-item dropdown">
-
-                    {# Texte du bouton du menu déroulant #}
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-newspaper me-1"></i>Blog
-                    </a>
-
-                    {# Liste des boutons du menu déroulant #}
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                        {# Bouton de la page qui liste tous les articles #}
-                        <li><a class="dropdown-item" href="">Publications</a></li>
-
-                        {# affichage des boutons reservé aux administrateur #}
-                        {% if is_granted('ROLE_ADMIN') %}
-
-                        {# Séparateur #}
-                        <li><hr class="dropdown-divider"></li>
-
-                        {# Bouton de la page pour créer un nouvel article #}
-                        <li><a class="dropdown-item" href="{{ path('blog_publication_new') }}">Nouvelle Publication</a></li>
-
-                    {% endif %}
-                    </ul>
 
 
 
@@ -83,10 +57,8 @@
 
 
 
-
             {# boutons de droite #}
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
+            <ul class="navbar-nav mx-auto nav-fill nav-underline">
 
                 {# affichage des liens reservés aux utilisateurs connectés et ceux pour les personnes déconnectés ds le else #}
                 {% if app.user %}
@@ -133,10 +105,42 @@
                 </li>
 
                 {% endif %}
+
+
+
+                {# Menu déroulant #}
+                <li class="nav-item dropdown">
+
+                    {# Texte du bouton du menu déroulant #}
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-newspaper me-1"></i>Blog
+                    </a>
+
+                    {# Liste des boutons du menu déroulant #}
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        {# Bouton de la page qui liste tous les articles #}
+                        <li><a class="dropdown-item" href="{{ path('blog_publication_list') }}">Publications</a></li>
+
+                        {# affichage des boutons reservé aux administrateur #}
+                        {% if is_granted('ROLE_ADMIN') %}
+
+                            {# Séparateur #}
+                            <li><hr class="dropdown-divider"></li>
+
+                            {# Bouton de la page pour créer un nouvel article #}
+                            <li><a class="dropdown-item" href="{{ path('blog_publication_new') }}">Nouvelle Publication</a></li>
+
+                        {% endif %}
+                    </ul>
+                </li>
+
+
             </ul>
 
 
         </div>
      </div>
 </nav>
+
 

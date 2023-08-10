@@ -21,7 +21,7 @@ class Article
     private ?string $content = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $pubicationDate = null;
+    private ?\DateTimeInterface $publicationDate = null;
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
     #[ORM\JoinColumn(nullable: false)]
@@ -56,14 +56,14 @@ class Article
         return $this;
     }
 
-    public function getPubicationDate(): ?\DateTimeInterface
+    public function getPublicationDate(): ?\DateTimeInterface
     {
-        return $this->pubicationDate;
+        return $this->publicationDate;
     }
 
-    public function setPubicationDate(\DateTimeInterface $pubicationDate): static
+    public function setPublicationDate(\DateTimeInterface $pubicationDate): static
     {
-        $this->pubicationDate = $pubicationDate;
+        $this->publicationDate = $publicationDate;
 
         return $this;
     }
@@ -78,5 +78,9 @@ class Article
         $this->author = $author;
 
         return $this;
+    }
+
+    public function getSlug()
+    {
     }
 }

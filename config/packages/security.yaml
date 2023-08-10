@@ -22,7 +22,7 @@ security:
             custom_authenticator: App\Security\LoginFormAuthenticator
             logout:
                 path: app_logout
-                # where to redirect after logout
+                # redirige vers l'accueil du site
                 target: main_home
 
             # activate different ways to authenticate

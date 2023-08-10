@@ -17,7 +17,7 @@ body{
     margin-right: 20px;
 }
 
-/*bannière et titre de la  page d'accueil*/
+/*bannière et titre de la  page Accueil*/
 .banner {
     height: 500px;
     background-image: url("../images/picture-vegetables .png");
@@ -39,6 +39,12 @@ h2{
 .subtitle{
     font-family: 'Satisfy', cursive;
 }
+
+/*Icones de la page d'accueil se colorent au passage de la souris*/
+.icon:hover{
+    background-color: #b9e3b8;
+}
+
 
 /*Page 'Nos produits'*/
 /*titres des cards produits locaux*/
@@ -62,13 +68,13 @@ h2{
 
 
 /*!*footer*!*/
-/*icône faccebook*/
+/*icônes*/
 .nav-link{
     width: 60px;
 }
 
 .site-footer{
-    background-color: #9fb2a3;
+    background-color: #b9e3b8;
 
 }
 
@@ -83,36 +89,4 @@ h2{
         font-size: 3.5rem;
     }
 }
-
-    /*Pour un format tablette*/
-/*@media(min-width:768px){
-
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

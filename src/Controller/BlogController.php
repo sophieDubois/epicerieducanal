@@ -16,7 +16,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class BlogController extends AbstractController
 {
 
-    /*Contôleur permettant de créer un nouvel article*/
+    /*Contrôleur permettant de créer un nouvel article*/
     #[Route('/nouvelle-publication/', name: 'publication_new')]
     #[IsGranted('ROLE_ADMIN')]
     public function publicationNew(Request $request, ManagerRegistry $doctrine ): Response
@@ -36,7 +36,7 @@ class BlogController extends AbstractController
 
             //hydrater l'article
             $newArticle
-                ->setPubicationDate(new \DateTime())
+                ->setPublicationDate(new \DateTime())
                 ->setAuthor( $this->getUser() )
             ;
 
@@ -57,4 +57,55 @@ class BlogController extends AbstractController
             'new_publication_form' => $form->createView(),
         ]);
     }
+
+
+    /*Contrôleur de la page listant tous les articles*/
+    #[Route('/publications/liste/', name: 'publication_list')]
+    public function publicationList(ManagerRegistry $doctrine): Response
+    {
+        //récupération du repository des articles
+        $articleRepo = $doctrine->getRepository(Article::class);
+
+        //on demande au repository de nous donner les articles qui sont en BDD
+        $articles = $articleRepo->findAll();
+
+
+        //on envoie les articles a la vue
+        return $this->render('blog/publication_list.html.twig', [
+            'articles' => $articles,
+        ]);
+    }
+
+    /*Contrôleur de la page d'édition des articles géré par ADMIN*/
+    /*controleur de la page admin servant a modifier un article existant via son id passé ds l'URL
+    acces reservé aux administrateur (ROLE_ADMIN)*/
+    #[Route('/publication/modifier/{id}/', name: 'publication_edit', priority: 10)]
+    #[IsGranted('ROLE_ADMIN')]
+    public function publicationEdit(Article $article, Request $request, ManagerRegistry $doctrine):Response
+    {
+        $form = $this->createForm(NewPublicationFormType::class, $article);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+
+            $em = $doctrine->getManager();
+            $em->flush();
+
+            $this->addFlash('success', 'Publication modifiéé avec succès !');
+
+            return $this->redirectToRoute('blog_publication_view', [
+                'slug' => $article->getSlug(),
+            ]);
+        }
+
+        return $this->render('blog/publication_edit.html.twig', [
+            'edit_form' => $form->createView(),
+        ]);
+    }
+
 }
+
+
+
+

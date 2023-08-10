@@ -4,7 +4,7 @@
 
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@
     {% block css %}{% endblock %}
 
 </head>
-<body>
+<body class="d-flex flex-column h-100">
     {# inclusion du menu principal du site #}
     {% include 'partials/_main_navbar.html.twig' %}
 
@@ -41,18 +41,19 @@
     {% block body %}{% endblock %}
 
     {# inclusion du footer du site sauf dans la page accueil #}
-    {#condition: si la route est differente que Accueil#}
-            {% if app.request.attributes.get('_route') != 'main_home' %}
+    {#condition: si la route est differente de Accueil#}
+    {# variable twig "route" qui contient le nom de la route chargée#}
+    {#{% set route = app.request.attributes.get('_route') %}#}
+    {% if route != 'main_home' %}
 
-            {% include 'partials/_main_footer.html.twig' %}
+        {% include 'partials/_main_footer.html.twig' %}
 
-        {% endif %}
-
-
-
+    {% endif %}
 
 
 
 
 </body>
+
+
 </html>

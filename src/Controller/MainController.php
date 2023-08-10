@@ -50,13 +50,6 @@ class MainController extends AbstractController
         return $this->render('main/profil.html.twig');
     }
 
-    /*Contrôleur*/
-
-
-
-
-
-
 
 }
 

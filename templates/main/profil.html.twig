@@ -14,6 +14,12 @@
             <div class="card-header text-center ">
                 <h1 class="fs-4"><i class="fa-regular fa-address-card mx-1"></i>Profil</h1>
             </div>
+
+                <div class="card-body">
+                    <p class=" p-2 m-2 fs-5 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam magni numquam voluptatibus?</p>
+                    <p class=" p-2 m-2 fs-5 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, laborum!</p>
+                </div>
+
         </div>
 
 
@@ -30,10 +36,15 @@
                             <div class="col-md-12">
                                 <div class="card-body">
                                     <ul class="text-xl-start">
+
                                         <li class="list-group-item">Adresse Email : <span class="fw-bold fs-5">{{ app.user.email }}</span></li>
+
                                         <li class="list-group-item">Pseudonyme : <span class="fw-bold fs-5">{{ app.user.pseudonym }}</span></li>
+
                                         <li class="list-group-item">Date d'inscription : <span class="fw-bold fs-5">{{ app.user.registrationDate | date('d/m/y à H\\hi') }}</span></li>
+
                                         <li class="list-group-item">Compte : <span class="fw-bold fs-5">{{ is_granted('ROLE_ADMIN') ? 'administrateur' : 'utilisateur'}}</span></li>
+
                                     </ul>
                                 </div>
                             </div>
